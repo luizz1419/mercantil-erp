@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mercantil ERP</title>
+<link rel="stylesheet" href="css/styles.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- ===================== TELA DE LOGIN ===================== -->
+<div id="view-login" class="auth-screen">
+  <div class="auth-card">
+    <div class="brand">🛒 <span>Mercantil ERP</span></div>
+    <p class="muted">Sistema de gestão e vendas — protótipo</p>
+
+    <form id="form-login" class="stack">
+      <label>E-mail
+        <input type="email" id="login-email" required placeholder="seuemail@exemplo.com" />
+      </label>
+      <label>Senha
+        <input type="password" id="login-password" required placeholder="••••••••" />
+      </label>
+      <div id="login-error" class="error-msg"></div>
+      <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+    </form>
+
+    <div class="auth-links">
+      <a href="#" id="link-register">Criar conta de cliente</a>
+      <a href="#" id="link-forgot">Esqueci minha senha</a>
+    </div>
+
+    <div class="test-users">
+      <strong>Usuários de teste (dados de exemplo):</strong>
+      <div>admin@mercantil.test / admin123 — Administrador</div>
+      <div>caixa@mercantil.test / caixa123 — Funcionário</div>
+      <div>cliente@mercantil.test / cliente123 — Cliente</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== CADASTRO (CLIENTE) ===================== -->
+<div id="view-register" class="auth-screen hidden">
+  <div class="auth-card">
+    <div class="brand">🛒 <span>Criar conta</span></div>
+    <form id="form-register" class="stack">
+      <label>Nome completo<input type="text" id="reg-name" required /></label>
+      <label>E-mail<input type="email" id="reg-email" required /></label>
+      <label>Telefone<input type="text" id="reg-phone" /></label>
+      <label>Senha (mín. 6 caracteres)<input type="password" id="reg-password" required /></label>
+      <div id="register-error" class="error-msg"></div>
+      <button type="submit" class="btn btn-primary btn-block">Criar conta</button>
+    </form>
+    <div class="auth-links"><a href="#" id="link-back-login-1">Voltar para o login</a></div>
+  </div>
+</div>
+
+<!-- ===================== RECUPERAR SENHA ===================== -->
+<div id="view-forgot" class="auth-screen hidden">
+  <div class="auth-card">
+    <div class="brand">🛒 <span>Recuperar senha</span></div>
+    <form id="form-forgot" class="stack">
+      <label>E-mail da conta<input type="email" id="forgot-email" required /></label>
+      <button type="submit" class="btn btn-primary btn-block">Enviar instruções</button>
+    </form>
+    <div id="forgot-result" class="muted small"></div>
+
+    <form id="form-reset" class="stack hidden">
+      <label>Token recebido<input type="text" id="reset-token" required /></label>
+      <label>Nova senha<input type="password" id="reset-password" required /></label>
+      <button type="submit" class="btn btn-primary btn-block">Redefinir senha</button>
+    </form>
+    <div class="auth-links"><a href="#" id="link-back-login-2">Voltar para o login</a></div>
+  </div>
+</div>
+
+<!-- ===================== APP (PÓS-LOGIN) ===================== -->
+<div id="view-app" class="app-shell hidden">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">🛒 <span>Mercantil</span></div>
+    <nav id="nav-menu"></nav>
+    <div class="sidebar-footer">
+      <button id="btn-theme" class="btn btn-ghost btn-block">🌙 Modo escuro</button>
+      <button id="btn-logout" class="btn btn-ghost btn-block">Sair</button>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button id="btn-menu-toggle" class="btn btn-ghost only-mobile">☰</button>
+      <h1 id="page-title">Dashboard</h1>
+      <div class="topbar-right">
+        <button id="btn-notifications" class="btn btn-ghost">🔔 <span id="notif-count" class="badge hidden">0</span></button>
+        <span id="user-badge" class="user-badge"></span>
+      </div>
+    </header>
+
+    <main id="page-content" class="page-content"></main>
+  </div>
+</div>
+
+<div id="notif-panel" class="notif-panel hidden"></div>
+<div id="modal-root"></div>
+<div id="toast-root" class="toast-root"></div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/products.js"></script>
+<script src="js/inventory.js"></script>
+<script src="js/pos.js"></script>
+<script src="js/customers.js"></script>
+<!-- Scripts adicionados (aprimoramentos) -->
+<script src="js/suppliers.js"></script>
+<script src="js/losses.js"></script>
+<script src="js/receiving.js"></script>
+<script src="js/sales-history.js"></script>
+<script src="js/reports.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

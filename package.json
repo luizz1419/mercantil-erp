@@ -1,0 +1,14 @@
+{
+  "name": "mercantil-erp-backend",
+  "version": "0.1.0",
+  "description": "Backend do sistema de gerenciamento de mercantil (prototipo)",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node seed.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}
